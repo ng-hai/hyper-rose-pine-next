@@ -255,7 +255,7 @@ const generateTabIcon = (React, { palette, title }) => {
 
 const useAppearance = (window) => {
   let appearance = {
-    isDarkMode: false,
+    isDarkMode: true,
     light: PaletteNames.Dawn,
     dark: PaletteNames.Default,
   }
