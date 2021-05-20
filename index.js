@@ -193,9 +193,7 @@ const defaultConfig = {
 }
 
 exports.decorateConfig = (config) => {
-  const rosepine = Object.assign({}, defaultConfig, config)
-
-  const { hyperRosePine } = rosepine
+  const hyperRosePine = Object.assign({}, defaultConfig, config.hyperRosePine)
 
   if (hyperRosePine.hideControls === true) {
     exports.decorateBrowserOptions = (defaultOptions) => {
@@ -285,16 +283,16 @@ exports.reduceUI = (state, action) => {
   ) {
     const { config } = action
 
-    const rosepine = Object.assign({}, defaultConfig, config.hyperRosePine)
+    const hyperRosePine = Object.assign({}, defaultConfig, config.hyperRosePine)
 
     const isDarkMode =
       action.type === "CONFIG_RELOAD" ? state.isDarkMode : action.isDarkMode
 
     const palette = Boolean(isDarkMode)
-      ? PaletteColors[rosepine.appearance.dark]
-      : PaletteColors[rosepine.appearance.light]
+      ? PaletteColors[hyperRosePine.appearance.dark]
+      : PaletteColors[hyperRosePine.appearance.light]
 
-    const theme = transformPaletteToConfig(palette, config.hyperRosePine)
+    const theme = transformPaletteToConfig(palette, hyperRosePine)
 
     return state
       .set("backgroundColor", theme.backgroundColor)
