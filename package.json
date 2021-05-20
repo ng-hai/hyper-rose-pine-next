@@ -1,0 +1,27 @@
+{
+  "name": "hyper-rose-pine-next",
+  "version": "1.0.0",
+  "description": "All natural pine, faux fur and a bit of soho vibes for the classy minimalist.",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "hyper",
+    "hyper-theme",
+    "theme",
+    "ui",
+    "terminal",
+    "rose pine",
+    "classy",
+    "dark theme",
+    "subtle",
+    "minimalist",
+    "minimal"
+  ],
+  "author": "Hai Nguyen <github@ng-hai.dev>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ng-hai/hyper-rose-pine-next"
+  }
+}
