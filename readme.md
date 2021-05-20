@@ -26,42 +26,33 @@ module.exports = {
 }
 ```
 
-## Usage for Hyper Canary
+## Enable Dark Mode
 
-Caution: Below configuration only works with **Hyper 3.1.0-canary.4**, you can download it **[here](https://github.com/vercel/hyper/actions/runs/824537347#artifacts)**.
+Caution: Dark Mode only works with **Hyper 3.1.0-canary.4**, you can download it **[here](https://github.com/vercel/hyper/actions/runs/824537347#artifacts)**.
 
-1. Download or clone this repo into your `~/.hyper_plugin/local`.
+(Optional) Theme configuration for supporting Dark Mode
 
-2. Add “hyper-rose-pine” into to `localPlugins` array.
+```js
+// ~/.hyper.js
+module.exports = {
+  config: {
+    hyperRosePine: {
+      // Default is "rose-pine", this property only works for Hyper 3.0.2
+      palette: "rose-pine-moon",
+      // Hyper Canary
+      appearance: {
+        // Default is "rose-pine"
+        dark: "rose-pine-moon",
+        light: "rose-pine-dawn",
+      },
+      // Default is false
+      hideControls: true,
+    },
+  },
+}
+```
 
-   ```js
-   // ~/.hyper.js
-   module.exports = {
-     localPlugins: ["hyper-rose-pine-next"],
-   }
-   ```
-
-3. (Optional) Theme configuration for supporting Dark Mode
-
-   ```js
-   // ~/.hyper.js
-   module.exports = {
-     config: {
-       hyperRosePine: {
-         appearance: {
-           // Default is "rose-pine"
-           dark: "rose-pine-moon",
-           light: "rose-pine-dawn",
-         },
-         // Default is false
-         hideControls: true,
-       },
-     },
-     localPlugins: ["hyper-rose-pine"],
-   }
-   ```
-
-4. Make a Full Reload, or restart Hyper app to apply changes.
+Restart Hyper app to apply changes.
 
 ## Gallery
 
