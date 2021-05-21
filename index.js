@@ -67,6 +67,15 @@ const PaletteColors = {
   },
 }
 
+const defaultConfig = {
+  palette: PaletteNames.Default,
+  appearance: {
+    dark: PaletteNames.Default,
+    light: PaletteNames.Dawn,
+  },
+  hideControls: false,
+}
+
 const transformPaletteToConfig = (palette, hyperRosePine) => {
   return {
     // https://github.com/rose-pine/rose-pine-theme/blob/main/palette.md#terminals
@@ -183,25 +192,24 @@ const transformPaletteToConfig = (palette, hyperRosePine) => {
   }
 }
 
-const defaultConfig = {
-  palette: PaletteNames.Default,
-  appearance: {
-    dark: PaletteNames.Default,
-    light: PaletteNames.Dawn,
-  },
-  hideControls: false,
-}
-
 exports.decorateConfig = (config) => {
-  const hyperRosePine = Object.assign({}, defaultConfig, config.hyperRosePine)
+  const hyperRosePine = {
+    ...defaultConfig,
+    ...config.hyperRosePine,
+    appearance: {
+      ...defaultConfig.appearance,
+      ...(config.hyperRosePine ? config.hyperRosePine.appearance : {}),
+    },
+  }
 
   if (hyperRosePine.hideControls === true) {
     exports.decorateBrowserOptions = (defaultOptions) => {
-      return Object.assign({}, defaultOptions, {
+      return {
+        ...defaultOptions,
         frame: false,
         transparent: true,
         titleBarStyle: "",
-      })
+      }
     }
   }
 
@@ -212,11 +220,7 @@ exports.decorateConfig = (config) => {
     palette = PaletteColors[selectedPalette]
   }
 
-  return Object.assign(
-    {},
-    config,
-    transformPaletteToConfig(palette, hyperRosePine)
-  )
+  return { ...config, ...transformPaletteToConfig(palette, hyperRosePine) }
 }
 
 const generateTabIcon = (React, { palette, title }) => {
@@ -264,12 +268,18 @@ const useAppearance = (window) => {
     const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
 
     const config = window.config.getConfig()
-    const rosepine = Object.assign({}, defaultConfig, config.hyperRosePine)
+    const hyperRosePine = {
+      ...defaultConfig,
+      ...config.hyperRosePine,
+      appearance: {
+        ...defaultConfig.appearance,
+        ...(config.hyperRosePine ? config.hyperRosePine.appearance : {}),
+      },
+    }
 
     appearance = {
       isDarkMode,
-      light: rosepine.appearance.light,
-      dark: rosepine.appearance.dark,
+      ...hyperRosePine.appearance,
     }
   }
 
@@ -283,7 +293,14 @@ exports.reduceUI = (state, action) => {
   ) {
     const { config } = action
 
-    const hyperRosePine = Object.assign({}, defaultConfig, config.hyperRosePine)
+    const hyperRosePine = {
+      ...defaultConfig,
+      ...config.hyperRosePine,
+      appearance: {
+        ...defaultConfig.appearance,
+        ...(config.hyperRosePine ? config.hyperRosePine.appearance : {}),
+      },
+    }
 
     const isDarkMode =
       action.type === "CONFIG_RELOAD" ? state.isDarkMode : action.isDarkMode
@@ -353,21 +370,23 @@ exports.decorateTabs = (Tabs, { React }) => {
     }
 
     render() {
-      let newProps = Object.assign({}, this.props)
+      let newProps = { ...this.props }
 
       const { tabs } = this.props
 
       if (tabs.length === 1 && this.state.palette !== undefined) {
-        newProps = Object.assign({}, this.props, {
+        newProps = {
+          ...this.props,
           tabs: [
-            Object.assign({}, tabs[0], {
+            {
+              ...tabs[0],
               title: generateTabIcon(React, {
                 palette: this.state.palette,
                 title: tabs[0].title,
               }),
-            }),
+            },
           ],
-        })
+        }
       }
 
       return React.createElement(Tabs, newProps)
@@ -397,15 +416,13 @@ exports.decorateTab = (Tab, { React }) => {
         return React.createElement(Tab, this.props)
       }
 
-      return React.createElement(
-        Tab,
-        Object.assign({}, this.props, {
-          text: generateTabIcon(React, {
-            palette: this.state.palette,
-            title: this.props.text,
-          }),
-        })
-      )
+      return React.createElement(Tab, {
+        ...this.props,
+        text: generateTabIcon(React, {
+          palette: this.state.palette,
+          title: this.props.text,
+        }),
+      })
     }
   }
 }
