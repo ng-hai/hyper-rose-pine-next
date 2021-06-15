@@ -26,27 +26,37 @@ module.exports = {
 }
 ```
 
-## Enable Dark Mode
+## Configuration
 
 Caution: Dark Mode only works with **Hyper 3.1.0-canary.4**, you can download it **[here](https://github.com/vercel/hyper/actions/runs/824537347#artifacts)**.
 
-(Optional) Theme configuration for supporting Dark Mode
+There are 3 variants in this theme. You can these values in the config files:
+- rose-pine (Dark)
+- rose-pine-moon (Dark, but dimmed)
+- rose-pine-dawn (Light)
 
 ```js
 // ~/.hyper.js
 module.exports = {
   config: {
     hyperRosePine: {
-      // Default is "rose-pine", this property only works for Hyper 3.0.2
+      // Set theme variant for Hyper 3.0.2. Default is "rose-pine"
       palette: "rose-pine-moon",
-      // Hyper Canary
+      // Dark mode settings (Hyper Canary only)
       appearance: {
         // Default is "rose-pine"
         dark: "rose-pine-moon",
         light: "rose-pine-dawn",
       },
-      // Default is false
+      // Hide the window controls (traffic buttons) on Mac. Default is false
       hideControls: true,
+      // Hide in-app notification after 5 seconds. Default is false
+      // I add this because there is no way to dismiss new version notification
+      hideNotifications: true,
+      // Hide tab title when there is only 1 tab opening. Default is true
+      hideTabTitle: true,
+      // Hide SVG Rose icons for all tabs. Default is false
+      hideTabIcons: false,
     },
   },
 }

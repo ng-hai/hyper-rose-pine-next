@@ -74,6 +74,9 @@ const defaultConfig = {
     light: PaletteNames.Dawn,
   },
   hideControls: false,
+  hideNotifications: false,
+  hideTabTitle: true,
+  hideTabIcons: false,
 }
 
 const transformPaletteToConfig = (palette, hyperRosePine) => {
@@ -168,6 +171,7 @@ const transformPaletteToConfig = (palette, hyperRosePine) => {
       .xterm-viewport::-webkit-scrollbar-thumb {
         background: ${palette.OverlayHighlight} !important;
       }
+
       .xterm-viewport::-webkit-scrollbar-thumb:window-inactive {
         background: ${palette.OverlayHighlight} !important;
       }
@@ -187,6 +191,32 @@ const transformPaletteToConfig = (palette, hyperRosePine) => {
       .rose-pine-title > svg {
         width: 14px;
         margin-right: 8px;
+        display: ${hyperRosePine.hideTabIcons ? "none" : "block"};
+      }
+
+      .tabs_title .rose-pine-title > span {
+        display: ${hyperRosePine.hideTabTitle ? "none" : "block"};
+      }
+
+      @keyframes fade-out {
+        0% {
+          opacity: 1;
+          transform:translate(0);
+        }
+        90% {
+          opacity: 0;
+          transform:translate(0);
+        }
+        100% {
+          opacity: 0;
+          transform:translate(9999px);
+        }
+      }
+
+      .notifications_view {
+        animation: ${
+          hyperRosePine.hideNotifications ? "fade-out 5s ease-out both" : "none"
+        };
       }
     `,
   }
