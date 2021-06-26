@@ -50,7 +50,7 @@ module.exports = {
       },
       // Hide the window controls (traffic buttons) on Mac. Default is false
       hideControls: true,
-      // Hide in-app notification after 5 seconds. Default is false
+      // Hide in-app notification after 10 seconds. Default is false
       // I add this because there is no way to dismiss new version notification
       hideNotifications: true,
       // Hide tab title when there is only 1 tab opening. Default is true

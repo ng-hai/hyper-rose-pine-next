@@ -215,7 +215,9 @@ const transformPaletteToConfig = (palette, hyperRosePine) => {
 
       .notifications_view {
         animation: ${
-          hyperRosePine.hideNotifications ? "fade-out 5s ease-out both" : "none"
+          hyperRosePine.hideNotifications
+            ? "fade-out 10s ease-out both"
+            : "none"
         };
       }
     `,
