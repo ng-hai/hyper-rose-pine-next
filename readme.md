@@ -28,7 +28,7 @@ module.exports = {
 
 ## Configuration
 
-Caution: Dark Mode only works with **Hyper 3.1.0-canary.4**, you can download it **[here](https://github.com/vercel/hyper/actions/runs/824537347#artifacts)**.
+Caution: Dark Mode only works with **Hyper ^3.1.0**.
 
 There are 3 variants in this theme. You can these values in the config files:
 - rose-pine (Dark)
@@ -42,7 +42,7 @@ module.exports = {
     hyperRosePine: {
       // Set theme variant for Hyper 3.0.2. Default is "rose-pine"
       palette: "rose-pine-moon",
-      // Dark mode settings (Hyper Canary only)
+      // Dark mode settings
       appearance: {
         // Default is "rose-pine"
         dark: "rose-pine-moon",
@@ -95,6 +95,6 @@ Restart Hyper app to apply changes.
 
 ## FAQs
 
-- Why does Dark Mode only work with Canary version?
+- Why does Dark Mode only work with version ^3.1.0?
 
-  Because the current version (Hyper 3.0.2) is using Chrome 66, which does not support `prefers-color-scheme` feature fully. [Source](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme#browser_compatibility)
+  Because the lower stable version (Hyper 3.0.2) is using Chrome 66, which does not support `prefers-color-scheme` feature fully. [Source](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme#browser_compatibility)
