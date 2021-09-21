@@ -2,7 +2,3 @@
 # yarn lockfile v1
 
 
-"@rose-pine/palette@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@rose-pine/palette/-/palette-1.0.0.tgz#e31e6ea8a8cdb9180557658c3c13e108d08f5b58"
-  integrity sha512-H0rh53IRt5L9eZDZhVaTsf07BOQSj3JCJ6CEjptHN81A10MkPa3eR2rgqZzyNAlZ2X3WqclWYF/VZpnkTfAzQQ==
