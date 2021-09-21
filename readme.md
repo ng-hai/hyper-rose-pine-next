@@ -31,22 +31,23 @@ module.exports = {
 Caution: Dark Mode only works with **Hyper ^3.1.0**.
 
 There are 3 variants in this theme. You can these values in the config files:
-- rose-pine (Dark)
-- rose-pine-moon (Dark, but dimmed)
-- rose-pine-dawn (Light)
+
+- dark (Dark)
+- moon (Dark, but dimmed)
+- dawn (Light)
 
 ```js
 // ~/.hyper.js
 module.exports = {
   config: {
     hyperRosePine: {
-      // Set theme variant for Hyper 3.0.2. Default is "rose-pine"
-      palette: "rose-pine-moon",
+      // Set theme variant for Hyper 3.0.2. Default is "dark"
+      palette: "moon",
       // Dark mode settings
       appearance: {
-        // Default is "rose-pine"
-        dark: "rose-pine-moon",
-        light: "rose-pine-dawn",
+        // Default is "dark"
+        dark: "moon",
+        light: "dawn",
       },
       // Hide the window controls (traffic buttons) on Mac. Default is false
       hideControls: true,

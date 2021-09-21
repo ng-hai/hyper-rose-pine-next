@@ -26,5 +26,8 @@
   ],
   "scripts": {
     "release": "npx np --no-publish"
+  },
+  "dependencies": {
+    "@rose-pine/palette": "1.0.0"
   }
 }
