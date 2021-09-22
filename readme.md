@@ -13,6 +13,8 @@
 
 ![demo](assets/demo.gif)
 
+_Check out `wallpaper` folder for static & dynamic variants_
+
 ## Usage
 
 ```sh
