@@ -11,6 +11,8 @@
     </a>
 </p>
 
+![demo](assets/demo.gif)
+
 ## Usage
 
 ```sh
@@ -67,31 +69,34 @@ Restart Hyper app to apply changes.
 
 ## Gallery
 
-<details><summary>Rose Pine</summary>
-<p>
-  <img src="./assets/rose-pine-no-tab.jpg" />
-</p>
-<p>
-  <img src="./assets/rose-pine-tab.jpg" />
-</p>
+<details>
+  <summary>Dark</summary>
+  <p>
+    <img src="./assets/rose-pine-no-tab.jpg" />
+  </p>
+  <p>
+    <img src="./assets/rose-pine-tab.jpg" />
+  </p>
 </details>
 
-<details><summary>Rose Pine Moon</summary>
-<p>
-  <img src="./assets/rose-pine-moon-no-tab.jpg" />
-</p>
-<p>
-  <img src="./assets/rose-pine-moon-tab.jpg" />
-</p>
+<details>
+  <summary>Moon</summary>
+  <p>
+    <img src="./assets/rose-pine-moon-no-tab.jpg" />
+  </p>
+  <p>
+    <img src="./assets/rose-pine-moon-tab.jpg" />
+  </p>
 </details>
 
-<details><summary>Rose Pine Dawn</summary>
-<p>
-  <img src="./assets/rose-pine-dawn-no-tab.jpg" />
-</p>
-<p>
-  <img src="./assets/rose-pine-dawn-tab.jpg" />
-</p>
+<details>
+  <summary>Dawn</summary>
+  <p>
+    <img src="./assets/rose-pine-dawn-no-tab.jpg" />
+  </p>
+  <p>
+    <img src="./assets/rose-pine-dawn-tab.jpg" />
+  </p>
 </details>
 
 ## FAQs
