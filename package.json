@@ -26,9 +26,9 @@
   ],
   "scripts": {
     "release": "npx np --no-publish",
-    "wallpaper:dark": "themer -c ./themer/dark.js -t @themerdev/wallpaper-block-wave --themer-wallpaper-block-wave-size 2560x1440 --themer-wallpaper-block-wave-size 3840x2160 --themer-wallpaper-block-wave-size 5120x2880 -o wallpaper",
-    "wallpaper:moon": "themer -c ./themer/moon.js -t @themerdev/wallpaper-block-wave --themer-wallpaper-block-wave-size 2560x1440 --themer-wallpaper-block-wave-size 3840x2160 --themer-wallpaper-block-wave-size 5120x2880 -o wallpaper",
-    "wallpaper:dawn": "themer -c ./themer/dawn.js -t @themerdev/wallpaper-block-wave --themer-wallpaper-block-wave-size 2560x1440 --themer-wallpaper-block-wave-size 3840x2160 --themer-wallpaper-block-wave-size 5120x2880 -o wallpaper"
+    "wallpaper:dark": "themer -c ./themer/dark.js -t @themerdev/wallpaper-block-wave --themer-wallpaper-block-wave-size 2560x1440 --themer-wallpaper-block-wave-size 3840x2160 --themer-wallpaper-block-wave-size 5120x2880 -o wallpaper/dark",
+    "wallpaper:moon": "themer -c ./themer/moon.js -t @themerdev/wallpaper-block-wave --themer-wallpaper-block-wave-size 2560x1440 --themer-wallpaper-block-wave-size 3840x2160 --themer-wallpaper-block-wave-size 5120x2880 -o wallpaper/moon",
+    "wallpaper:dawn": "themer -c ./themer/dawn.js -t @themerdev/wallpaper-block-wave --themer-wallpaper-block-wave-size 2560x1440 --themer-wallpaper-block-wave-size 3840x2160 --themer-wallpaper-block-wave-size 5120x2880 -o wallpaper/dawn"
   },
   "dependencies": {
     "@themerdev/wallpaper-block-wave": "4.0.3",
