@@ -30,7 +30,7 @@
     "wallpaper:moon": "themer -c ./themer/moon.js -t @themerdev/wallpaper-block-wave --themer-wallpaper-block-wave-size 2560x1440 --themer-wallpaper-block-wave-size 3840x2160 --themer-wallpaper-block-wave-size 5120x2880 -o wallpaper/moon",
     "wallpaper:dawn": "themer -c ./themer/dawn.js -t @themerdev/wallpaper-block-wave --themer-wallpaper-block-wave-size 2560x1440 --themer-wallpaper-block-wave-size 3840x2160 --themer-wallpaper-block-wave-size 5120x2880 -o wallpaper/dawn"
   },
-  "dependencies": {
+  "devDependencies": {
     "@themerdev/wallpaper-block-wave": "4.0.3",
     "themer": "3.3.9"
   }
