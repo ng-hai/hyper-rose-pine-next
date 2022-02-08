@@ -32,8 +32,6 @@ module.exports = {
 
 ## Configuration
 
-Caution: Dark Mode only works with **Hyper ^3.1.0**.
-
 There are 3 variants in this theme. You can these values in the config files:
 
 - dark (Dark)
@@ -45,9 +43,7 @@ There are 3 variants in this theme. You can these values in the config files:
 module.exports = {
   config: {
     hyperRosePine: {
-      // Set theme variant for Hyper 3.0.2. Default is "dark"
-      palette: "moon",
-      // Dark mode settings
+      // Dynamic theme settings
       appearance: {
         // Default is "dark"
         dark: "moon",
@@ -55,8 +51,8 @@ module.exports = {
       },
       // Hide the window controls (traffic buttons) on Mac. Default is false
       hideControls: true,
-      // Hide in-app notification after 10 seconds. Default is false
-      // I add this because there is no way to dismiss new version notification
+      // Hide in-app notification after 20 seconds. Default is false
+      // I add this because there is no way to dismiss new version notification in the past
       hideNotifications: true,
       // Hide tab title when there is only 1 tab opening. Default is true
       hideTabTitle: true,
@@ -101,8 +97,77 @@ Restart Hyper app to apply changes.
   </p>
 </details>
 
-## FAQs
+## Recommended config
 
-- Why does Dark Mode only work with version ^3.1.0?
+### Typography (Hyper)
 
-  Because the lower stable version (Hyper 3.0.2) is using Chrome 66, which does not support `prefers-color-scheme` feature fully. [Source](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme#browser_compatibility)
+It’s recommended to use [Nerd Font](https://www.nerdfonts.com) to add a high number of extra glyphs (icon).
+
+```js
+// font family with optional fallbacks
+fontFamily: "JetBrainsMono Nerd Font",
+
+// default font weight: 'normal' or 'bold'
+fontWeight: "normal",
+
+// font weight for bold characters: 'normal' or 'bold'
+fontWeightBold: "normal",
+
+// line height as a relative unit
+lineHeight: 1.2,
+
+// letter spacing as a relative unit
+letterSpacing: 0,
+```
+
+### Glyph (OhMyZSH)
+
+```sh
+ZSH_DISABLE_COMPFIX="true"
+
+# https://spaceship-prompt.sh
+ZSH_THEME="spaceship"
+
+# Uncomment the following line to disable auto-setting terminal title.
+DISABLE_AUTO_TITLE="true"
+function set_win_title() {
+        echo -ne "\033]0; $(basename "$PWD") \007"
+}
+
+precmd_functions+=(set_win_title)
+
+# Automatically load a node version in the current working directory.
+NVM_AUTOLOAD=1
+
+# Disable the highlighting of pasted text
+zle_highlight=('paste:none')
+
+# Spaceship customization
+
+# Prompt character to be shown before any command
+SPACESHIP_CHAR_SYMBOL="  "
+# Prefix before Git section
+SPACESHIP_GIT_PREFIX="on branch  "
+# Prefix before Git branch subsection
+SPACESHIP_GIT_BRANCH_PREFIX=""
+# Prefix before package version section
+SPACESHIP_PACKAGE_PREFIX="version 爐"
+# Character to be shown before package version
+SPACESHIP_PACKAGE_SYMBOL=""
+# Prefix before Node.js section
+SPACESHIP_NODE_PREFIX="with  "
+# Character to be shown before Node.js version
+SPACESHIP_NODE_SYMBOL=""
+# Show current active gcloud configuration or not
+SPACESHIP_GCLOUD_SHOW="false"
+# Show Kubernetes section
+SPACESHIP_KUBECTL_SHOW="true"
+# Prefix before Kubernetes section
+SPACESHIP_KUBECTL_PREFIX="environment   "
+# Character to be shown before Kubernetes subsection
+SPACESHIP_KUBECTL_SYMBOL=""
+# Show Kubernetes version subsection
+SPACESHIP_KUBECTL_VERSION_SHOW="false"
+# Suffix after Kubectl context section
+SPACESHIP_KUBECONTEXT_SUFFIX=""
+```
