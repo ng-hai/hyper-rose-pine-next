@@ -4,14 +4,14 @@ const PaletteNames = {
   Dawn: "dawn",
 }
 
-// https://github.com/rose-pine/palette/blob/main/source/index.ts
+// https://github.com/rose-pine/palette/blob/main/index.js
 const PaletteColors = {
   [PaletteNames.Dark]: {
     base: "#191724",
     surface: "#1f1d2e",
     overlay: "#26233a",
-    inactive: "#555169",
-    subtle: "#6e6a86",
+    muted: "#6e6a86",
+    subtle: "#908caa",
     text: "#e0def4",
     love: "#eb6f92",
     gold: "#f6c177",
@@ -19,16 +19,16 @@ const PaletteColors = {
     pine: "#31748f",
     foam: "#9ccfd8",
     iris: "#c4a7e7",
-    highlight: "#2a2837",
-    highlightInactive: "#211f2d",
-    highlightOverlay: "#3a384a",
+    highlightLow: "rgba(110, 106, 134, 0.1)",
+    highlightMed: "rgba(110, 106, 134, 0.2)",
+    highlightHigh: "rgba(110, 106, 134, 0.4)",
   },
   [PaletteNames.Moon]: {
     base: "#232136",
     surface: "#2a273f",
     overlay: "#393552",
-    inactive: "#59546d",
-    subtle: "#817c9c",
+    muted: "#6e6a86",
+    subtle: "#908caa",
     text: "#e0def4",
     love: "#eb6f92",
     gold: "#f6c177",
@@ -36,16 +36,16 @@ const PaletteColors = {
     pine: "#3e8fb0",
     foam: "#9ccfd8",
     iris: "#c4a7e7",
-    highlight: "#312f44",
-    highlightInactive: "#2a283d",
-    highlightOverlay: "#3f3c53",
+    highlightLow: "rgba(129, 124, 156, 0.08)",
+    highlightMed: "rgba(129, 124, 156, 0.15)",
+    highlightHigh: "rgba(129, 124, 156, 0.3)",
   },
   [PaletteNames.Dawn]: {
     base: "#faf4ed",
     surface: "#fffaf3",
-    overlay: "#f2e9de",
-    inactive: "#9893a5",
-    subtle: "#6e6a86",
+    overlay: "#f2e9e1",
+    muted: "#9893a5",
+    subtle: "#797593",
     text: "#575279",
     love: "#b4637a",
     gold: "#ea9d34",
@@ -53,9 +53,9 @@ const PaletteColors = {
     pine: "#286983",
     foam: "#56949f",
     iris: "#907aa9",
-    highlight: "#eee9e6",
-    highlightInactive: "#f2ede9",
-    highlightOverlay: "#e4dfde",
+    highlightLow: "rgba(110, 106, 134, 0.05)",
+    highlightMed: "rgba(110, 106, 134, 0.08)",
+    highlightHigh: "rgba(110, 106, 134, 0.15)",
   },
 }
 
@@ -76,8 +76,8 @@ const transformPaletteToConfig = (palette, hyperRosePine) => {
     // https://github.com/rose-pine/rose-pine-theme/blob/main/palette.md#terminals
     foregroundColor: palette.text,
     backgroundColor: palette.base,
-    selectionColor: palette.highlight,
-    cursorColor: palette.inactive,
+    selectionColor: palette.highlightMed,
+    cursorColor: palette.highlightLow,
     cursorAccentColor: palette.text,
     colors: {
       black: palette.overlay,
@@ -133,7 +133,7 @@ const transformPaletteToConfig = (palette, hyperRosePine) => {
       }
 
       .tab_tab, .tab_icon {
-        color: ${palette.inactive};
+        color: ${palette.muted};
       }
 
       .tab_icon {
@@ -161,11 +161,11 @@ const transformPaletteToConfig = (palette, hyperRosePine) => {
       }
 
       .xterm-viewport::-webkit-scrollbar-thumb {
-        background: ${palette.highlightOverlay} !important;
+        background: ${palette.highlightHigh} !important;
       }
 
-      .xterm-viewport::-webkit-scrollbar-thumb:window-inactive {
-        background: ${palette.highlightOverlay} !important;
+      .xterm-viewport::-webkit-scrollbar-thumb:window-muted {
+        background: ${palette.highlightHigh} !important;
       }
 
       .splitpane_divider {
