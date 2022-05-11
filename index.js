@@ -73,11 +73,11 @@ const defaultConfig = {
 
 const transformPaletteToConfig = (palette, hyperRosePine) => {
   return {
-    // https://github.com/rose-pine/rose-pine-theme/blob/main/palette.md#terminals
+    // https://github.com/rose-pine/palette#palette
     foregroundColor: palette.text,
     backgroundColor: palette.base,
     selectionColor: palette.highlightMed,
-    cursorColor: palette.highlightLow,
+    cursorColor: palette.muted,
     cursorAccentColor: palette.text,
     colors: {
       black: palette.overlay,
