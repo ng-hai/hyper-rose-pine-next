@@ -123,27 +123,17 @@ letterSpacing: 0,
 ### Glyph (OhMyZSH)
 
 ```sh
-ZSH_DISABLE_COMPFIX="true"
-
-# https://spaceship-prompt.sh
+# https://github.com/spaceship-prompt/spaceship-prompt
 ZSH_THEME="spaceship"
 
-# Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
-function set_win_title() {
-        echo -ne "\033]0; $(basename "$PWD") \007"
-}
-
-precmd_functions+=(set_win_title)
+# Which plugins would you like to load?
+plugins=(git nvm last-working-dir zsh-autosuggestions zsh-syntax-highlighting)
 
 # Automatically load a node version in the current working directory.
 NVM_AUTOLOAD=1
 
-# Disable the highlighting of pasted text
-zle_highlight=('paste:none')
-
 # Spaceship customization
-
+# -----------------------
 # Prompt character to be shown before any command
 SPACESHIP_CHAR_SYMBOL="  "
 # Prefix before Git section
@@ -151,7 +141,7 @@ SPACESHIP_GIT_PREFIX="on branch  "
 # Prefix before Git branch subsection
 SPACESHIP_GIT_BRANCH_PREFIX=""
 # Prefix before package version section
-SPACESHIP_PACKAGE_PREFIX="version 爐"
+SPACESHIP_PACKAGE_PREFIX="version  "
 # Character to be shown before package version
 SPACESHIP_PACKAGE_SYMBOL=""
 # Prefix before Node.js section
